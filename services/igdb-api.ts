@@ -1,6 +1,10 @@
 import { Game } from '@type/types';
 import axios from 'axios';
 
+/**
+ * Fetches video games properties from the igdb api
+ * @returns Promise<Game[]>
+ */
 export async function getGames(): Promise<Game[]> {
   const fetchedGames = await new Promise<Game[]>((resolve, reject) => {
     axios({
@@ -10,21 +14,16 @@ export async function getGames(): Promise<Game[]> {
         Accept: 'application/json',
         'Client-ID': process.env.NEXT_PUBLIC_CLIENT_ID as string,
         Authorization: 'Bearer azq2ht7fwl6czb0nyyvimk1n0hsye1',
-        // 'Access-Control-Allow-Origin': 'https://api.igdb.com/v4',
-        'Access-Control-Allow-Origin': 'http://localhost:3000',
       },
       data: 'fields cover, first_release_date, genres, name, platforms, rating, status;',
     })
       .then((response) => {
-        // console.log('success');
-        resolve(response as unknown as Game[]);
-        // console.log(response);
+        resolve(response.data as unknown as Game[]);
       })
       .catch((error) => {
-        // console.error(error);
         reject(error);
       });
   });
-  // console.log(fetchedGames);
+
   return fetchedGames;
 }

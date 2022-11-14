@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest --verbose",
+    "test": "jest --watch --verbose",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook -s public"
