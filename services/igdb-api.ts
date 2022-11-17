@@ -2,7 +2,7 @@ import { Game } from '@type/types';
 import axios from 'axios';
 
 /**
- * Fetches video games properties from the igdb api
+ * Fetches video games properties from the igdb games endpoint
  * @returns Promise<Game[]>
  */
 export async function getGames(): Promise<Game[]> {
@@ -27,3 +27,5 @@ export async function getGames(): Promise<Game[]> {
 
   return fetchedGames;
 }
+
+
