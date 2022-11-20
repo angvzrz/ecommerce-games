@@ -15,7 +15,7 @@ export async function getGames(): Promise<Game[]> {
         'Client-ID': process.env.NEXT_PUBLIC_CLIENT_ID as string,
         Authorization: 'Bearer azq2ht7fwl6czb0nyyvimk1n0hsye1',
       },
-      data: 'fields cover, first_release_date, genres, name, platforms, rating, status;',
+      data: 'fields cover.url, first_release_date, genres, name, platforms, rating, status; where cover != null;',
     })
       .then((response) => {
         resolve(response.data as unknown as Game[]);
