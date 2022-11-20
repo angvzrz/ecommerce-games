@@ -13,7 +13,6 @@ function ProductCard({
   videoGameTitle,
   videoGamePrice,
 }: ProductCardProps) {
-  getGames().then(data => console.log(data));
   
   return (
     <div>
