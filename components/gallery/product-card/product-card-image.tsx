@@ -5,17 +5,18 @@ const joinClassNames = (...classes: string[]) => {
   return classes.filter(Boolean).join(' ');
 };
 
-function ProductCardImage() {
+interface ProductCardImageProps {
+  imageUrl: string;
+}
+
+function ProductCardImage({imageUrl}: ProductCardImageProps) {
   const [isLoading, setLoading] = useState(true);
 
   return (
-    <div
-      className="max-h-64 p-2  
-    aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8"
-    >
+    <div className="aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
       <Image
         alt=""
-        src="https://bit.ly/placeholder-img"
+        src={isLoading ? "https://bit.ly/placeholder-img" : "https:" + imageUrl}
         layout="fill"
         objectFit="cover"
         className={joinClassNames(

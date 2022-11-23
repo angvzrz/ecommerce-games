@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['bit.ly'],
+    domains: ['bit.ly', 'images.igdb.com'],
   },
   publicRuntimeConfig: {
     clientId: process.env.NEXT_PUBLIC_CLIENT_ID

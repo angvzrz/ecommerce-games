@@ -3,23 +3,23 @@ import { ProductCardDetails } from './product-card-details';
 import { ProductCardImage } from './product-card-image';
 
 interface ProductCardProps {
-  image: string;
+  imageUrl: string;
   videoGameTitle: string;
-  videoGamePrice: number;
+  videoGamePrice?: number;
 }
 
 function ProductCard({
-  image,
+  imageUrl,
   videoGameTitle,
   videoGamePrice,
 }: ProductCardProps) {
-  getGames().then(data => console.log(data));
-  
+  const hdUrl = imageUrl.replace('thumb', '1080p');
+
   return (
-    <div className="max-w-sm md:h-1/2 lg:w-1/4 pl-5 pr-5 mb-5 lg:pl-2 lg:pr-2 ">
+    <div>
       <a href="" className="group">
-        <ProductCardImage />
-        <ProductCardDetails />
+        <ProductCardImage imageUrl={hdUrl} />
+        <ProductCardDetails videoGameTitle={videoGameTitle} />
       </a>
     </div>
   );

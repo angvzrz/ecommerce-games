@@ -7,6 +7,6 @@ export default {
   component: ProductCard,
 } as ComponentMeta<typeof ProductCard>;
 
-const Template: ComponentStory<typeof ProductCard> = (args) => <ProductCard image='' videoGameTitle='' videoGamePrice={0} />;
+const Template: ComponentStory<typeof ProductCard> = (args) => <ProductCard cover='' videoGameTitle='' videoGamePrice={0} />;
 
 export const Default = Template.bind({});
