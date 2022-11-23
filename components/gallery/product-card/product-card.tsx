@@ -13,11 +13,12 @@ function ProductCard({
   videoGameTitle,
   videoGamePrice,
 }: ProductCardProps) {
-  
+  const hdUrl = imageUrl.replace('thumb', '1080p');
+
   return (
     <div>
       <a href="" className="group">
-        <ProductCardImage imageUrl={imageUrl}/>
+        <ProductCardImage imageUrl={hdUrl} />
         <ProductCardDetails videoGameTitle={videoGameTitle} />
       </a>
     </div>
