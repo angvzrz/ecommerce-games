@@ -17,8 +17,8 @@ function ProductCard({
   return (
     <div>
       <a href="" className="group">
-        <ProductCardImage />
-        <ProductCardDetails />
+        <ProductCardImage imageUrl={imageUrl}/>
+        <ProductCardDetails videoGameTitle={videoGameTitle} />
       </a>
     </div>
   );
