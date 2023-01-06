@@ -13,7 +13,7 @@ export async function getGames(): Promise<Game[]> {
       headers: {
         Accept: 'application/json',
         'Client-ID': process.env.NEXT_PUBLIC_CLIENT_ID as string,
-        Authorization: 'Bearer azq2ht7fwl6czb0nyyvimk1n0hsye1',
+        Authorization: 'Bearer eafn5birsjnhnkgoetkml5h6185c12',
       },
       data: 'fields cover.url, first_release_date, genres, name, platforms, rating, status; where cover != null;',
     })
