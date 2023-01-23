@@ -1,6 +1,16 @@
+import { getGames } from "pages/api/igdb-api";
+import { ChangeEvent, useEffect, useState } from "react";
 import { SearchButton } from "../search-button";
 
 export function SearchBar() {
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleSearch = async () => {
+    const foundGames = await getGames(searchValue);
+    console.log(foundGames);
+    
+  };
+
   return (
     <label className="relative">
       <input
@@ -8,8 +18,9 @@ export function SearchBar() {
         placeholder="Search.."
         type="search"
         name="search"
+        onChange={(e) => setSearchValue(e.target.value)}
       />
-      <SearchButton />
+      <SearchButton onClick={handleSearch}/>
     </label>
   );
 }

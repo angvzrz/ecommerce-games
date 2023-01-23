@@ -1,9 +1,10 @@
 import { InferGetStaticPropsType } from "next";
-import { getGames } from "@service/igdb-api";
+
 import { Game } from "@type/types";
 import type { NextPage } from "next";
 import { Gallery } from "@component/gallery/gallery";
 import { Header } from "@component/header";
+import { getGames } from "./api/igdb-api";
 
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   videoGames,
@@ -20,7 +21,6 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
 export async function getStaticProps() {
   const videoGames = await getGames();
-  console.log(videoGames);
 
   return { props: { videoGames } };
 }
