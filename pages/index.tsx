@@ -4,7 +4,7 @@ import { Game } from "@type/types";
 import type { NextPage } from "next";
 import { Gallery } from "@component/gallery/gallery";
 import { Header } from "@component/header";
-import { getGames } from "./api/igdb-api";
+import { getGames } from "../features/services/igdb-api";
 
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   videoGames,
