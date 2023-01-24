@@ -1,9 +1,4 @@
 import { InferGetStaticPropsType } from "next";
-<<<<<<< HEAD
-
-=======
-import { getGames } from "@service/igdb-api";
->>>>>>> refs/remotes/origin/feature/header
 import { Game } from "@type/types";
 import type { NextPage } from "next";
 import { Gallery } from "@component/gallery/gallery";
