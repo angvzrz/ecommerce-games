@@ -20,7 +20,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 };
 
 export async function getStaticProps() {
-  const videoGames = await getGames();
+  const videoGames: Game[] = await getGames();
 
   return { props: { videoGames } };
 }

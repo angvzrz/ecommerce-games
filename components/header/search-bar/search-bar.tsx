@@ -1,4 +1,4 @@
-import { getGames } from "pages/api/igdb-api";
+import axios from "axios";
 import { ChangeEvent, useEffect, useState } from "react";
 import { SearchButton } from "../search-button";
 
@@ -6,9 +6,13 @@ export function SearchBar() {
   const [searchValue, setSearchValue] = useState("");
 
   const handleSearch = async () => {
-    const foundGames = await getGames(searchValue);
-    console.log(foundGames);
-    
+    if (searchValue !== "") {
+      const foundGames = axios
+        .post("/api/search", { search: "zelda" })
+        .then((response) => console.log(response.data));
+    }
+
+    // console.log(foundGames);
   };
 
   return (
@@ -20,7 +24,7 @@ export function SearchBar() {
         name="search"
         onChange={(e) => setSearchValue(e.target.value)}
       />
-      <SearchButton onClick={handleSearch}/>
+      <SearchButton onClick={handleSearch} />
     </label>
   );
 }
