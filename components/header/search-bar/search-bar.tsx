@@ -8,7 +8,7 @@ export function SearchBar() {
   const handleSearch = async () => {
     if (searchValue !== "") {
       const foundGames = axios
-        .post("/api/search", { search: "zelda" })
+        .post("/api/search", { search: searchValue })
         .then((response) => console.log(response.data));
     }
 
